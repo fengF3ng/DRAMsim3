@@ -116,8 +116,9 @@ if __name__ == '__main__':
         is_epoch = False
         try:
             j_data = json.load(j_file)
-        except:
+        except Exception as e:
             print('cannot load file ' + args.json)
+            print(e)
             exit(1)
         if isinstance(j_data, list):
             is_epoch = True
